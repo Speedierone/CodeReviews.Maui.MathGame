@@ -1,5 +1,4 @@
-﻿namespace Maui.MathGame.Speedierone
-{
+﻿namespace Maui.MathGame.Speedierone;
     public partial class MainPage : ContentPage
     {
         public MainPage()
@@ -13,6 +12,11 @@
 
             Navigation.PushAsync(new GamePage(button.Text));
         }
+
+        private void OnViewPreviousGamesChosen(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new PreviousGames());
+    }
     }
 
-}
+

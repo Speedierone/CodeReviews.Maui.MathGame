@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Maui.MathGame.Speedierone.Data;
+using Microsoft.Extensions.Logging;
 
 namespace Maui.MathGame.Speedierone
 {
@@ -18,6 +19,10 @@ namespace Maui.MathGame.Speedierone
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
+            string dbPath = Path.Combine(FileSystem.AppDataDirectory, "game.db");
+
+            builder.Services.AddSingleton(s =>
+            new GameRepository(dbPath));
 
             return builder.Build();
         }
