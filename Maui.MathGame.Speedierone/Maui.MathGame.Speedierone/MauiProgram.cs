@@ -12,8 +12,7 @@ namespace Maui.MathGame.Speedierone
                 .UseMauiApp<App>()
                 .ConfigureFonts(fonts =>
                 {
-                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-                    fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("Pacifico-Regular.ttf", "PacificoRegular");
                 });
 
 #if DEBUG
