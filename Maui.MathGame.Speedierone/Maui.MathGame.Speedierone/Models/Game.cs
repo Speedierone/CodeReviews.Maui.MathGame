@@ -17,6 +17,9 @@ namespace Maui.MathGame.Speedierone.Models
         public GameOperation Type { get; set; }
         public int Score { get; set; }
         public DateTime DatePlayed { get; set; }
+        public string TimeTaken { get; set; }
+        public string Difficulty { get; set; }
+        public string GameAmount { get; set; }
     }
 
     public enum GameOperation

@@ -2,35 +2,36 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Maui.MathGame.Speedierone.PreviousGames"
-             Title="PreviousGames"
              BackgroundImageSource="background.jpg">
     <ScrollView>
         <VerticalStackLayout
-            Padding="200,100,200,50">
+            Padding="60,30,50,50">
+            <Grid ColumnDefinitions="*,*,*,*"
+                  RowDefinitions="60">
+                <Label Grid.Column="0" Text="Date Played" FontSize="32"/>
+                <Label Grid.Column="1" Text="Game Type" FontSize="32"/>
+                <Label Grid.Column="2" Text="Score" FontSize="32"/>
+                <Button
+                    Grid.Column="3" Text="Return to Main Menu" FontSize="16" Clicked="GoToMainMenuOnEvent" />
+            </Grid>
             <CollectionView 
                 x:Name="gamesList">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="35"/>
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="2*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-
-                            <Label Grid.Column="0" Text="{Binding DatePlayed, StringFormat='{0:d}'}" FontSize="16" />
-                            <Label Grid.Column="1" Text="{Binding Type}" FontSize="16" />
-                            <Label Grid.Column="2" Text="{Binding Score}" FontSize="16" />
-                            <Button Grid.Column="3" Text="Delete" Clicked="OnDelete"
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid ColumnDefinitions="*,*,*,*"
+                              RowDefinitions="50"
+                                  Padding="5"
+                              >
+                                <Label Grid.Column="0" Text="{Binding DatePlayed, StringFormat='{0:d}'}" FontSize="16" TextColor="Orange" />
+                                <Label Grid.Column="1" Text="{Binding Type}" FontSize="16" TextColor="Orange"/>
+                                <Label Grid.Column="2" Text="{Binding Score}" FontSize="16" TextColor="Orange" />
+                                <Button Grid.Column="3" Text="Delete" Clicked="OnDelete"
                                     BindingContext="{Binding Id}"/>
-                        </Grid>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
